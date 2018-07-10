@@ -5,6 +5,9 @@ env:
     "GITHUB_TOKEN": "/CodeBuild/GitHub-Token"
 
 phases:
+  install:
+    commands:
+      - npm install
   build:
     commands:
       - tar -zcf SOURCES/alexchesters-utils.tar.gz src
