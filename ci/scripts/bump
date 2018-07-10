@@ -4,7 +4,7 @@ set -e
 GITHUB_TOKEN=$1
 
 # create the release
-UPLOAD_URL=$(curl \
+IDENTIFIER=$(curl \
   -X POST \
   -H 'Content-Type: application/json' \
   --data '{
@@ -15,11 +15,13 @@ UPLOAD_URL=$(curl \
   "draft": false,
   "prerelease": false}
 ' https://api.github.com/repos/AlexChesters/utils/releases?access_token=$GITHUB_TOKEN \
-  jq -r .assets_url) # TODO: Use URI templates and use proper upload_url
+  jq -r .id)
+
+# TODO: Use URI templates and use proper upload_url
 
 # upload the RPM to the release
 curl \
   -X POST \
   -H 'Content-Type: application/x-rpm' \
   --data @RPMS/x86_64/alexchesters-utils-0.0.0-1.x86_64.rpm \
-  $UPLOAD_URL?access_token=$GITHUB_TOKEN&name=alexchesters-utils.rpm
+  https://uploads.github.com/repos/AlexChesters/utils/releases/$IDENTIFIER/assets?access_token=$GITHUB_TOKEN&name=alexchesters-utils.rpm
