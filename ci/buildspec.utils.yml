@@ -12,4 +12,4 @@ phases:
       - aws s3 cp RPMS/x86_64 s3://$BUILDS_BUCKET/ --recursive
   post_build:
     commands:
-      - ./ci/scripts/bump $GITHUB_TOKEN
+      - node ./ci/scripts/bump.js $GITHUB_TOKEN

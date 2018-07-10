@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/AlexChesters/yum#readme",
   "devDependencies": {
+    "@octokit/rest": "^15.9.4",
     "stack-manager": "^0.4.2"
   }
 }
