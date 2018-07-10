@@ -20,19 +20,14 @@ A collection of various utilities packaged as an RPM
 %prep
 %setup -q -c -n %{name}
 
-%pre
-getent group alexchesters-utils >/dev/null || groupadd -r alexchesters-utils
-getent passwd alexchesters-utils >/dev/null || useradd -r -g alexchesters-utils -G alexchesters-utils -d / -s /sbin/nologin -c "alexchesters-utils" alexchesters-utils
-
 %install
 mkdir -p %{buildroot}/usr/lib/alexchesters-utils
-cp -r ./src %{buildroot}/usr/lib/alexchesters-utils
+cp ./src/* %{buildroot}/usr/lib/alexchesters-utils/.
 mkdir -p %{buildroot}/var/log/alexchesters-utils
 
 %clean
 rm -rf %{buildroot}
 
 %files
-%defattr(644, alexchesters-utils, alexchesters-utils, 755)
-/usr/lib/alexchesters-utils
+%defattr(644, root, root, 755)
 /var/log/alexchesters-utils
