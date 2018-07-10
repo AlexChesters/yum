@@ -1,0 +1,23 @@
+{
+  "name": "utils",
+  "version": "0.0.0",
+  "description": "A collection of various utilities packaged as an RPM",
+  "main": "index.js",
+  "scripts": {
+    "create-stack": "stack-manager create",
+    "update-stack": "stack-manager update"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexChesters/yum.git"
+  },
+  "author": "Alex Chesters",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexChesters/yum/issues"
+  },
+  "homepage": "https://github.com/AlexChesters/yum#readme",
+  "devDependencies": {
+    "stack-manager": "^0.4.2"
+  }
+}
