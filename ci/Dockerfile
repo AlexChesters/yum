@@ -1,4 +1,7 @@
 FROM amazonlinux:2
 
-RUN yum install -y rpm-build python-pip
+# install yum dependencies
+RUN yum install -y rpm-build python-pip git
+
+# install pip dependencies
 RUN pip install awscli --upgrade
