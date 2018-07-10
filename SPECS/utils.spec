@@ -30,4 +30,5 @@ rm -rf %{buildroot}
 
 %files
 %defattr(644, root, root, 755)
+/usr/lib/alexchesters-utils
 /var/log/alexchesters-utils
