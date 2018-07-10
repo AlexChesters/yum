@@ -38,6 +38,16 @@
               "Statement": [
                 {
                   "Action": [
+                    "ssm:GetParameter"
+                  ],
+                  "Resource": [
+                    "arn:aws:ssm:eu-west-1:008356366354:parameter/CodeBuild/GitHub-Token"
+                  ],
+                  "Effect": "Allow",
+                  "Sid": "SSMPolicy"
+                },
+                {
+                  "Action": [
                     "ecr:BatchCheckLayerAvailability",
                     "ecr:CompleteLayerUpload",
                     "ecr:GetAuthorizationToken",
@@ -46,7 +56,8 @@
                     "ecr:UploadLayerPart"
                   ],
                   "Resource": "*",
-                  "Effect": "Allow"
+                  "Effect": "Allow",
+                  "Sid": "ECRPolicy"
                 },
                 {
                   "Action": [
