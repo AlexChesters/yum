@@ -23,12 +23,13 @@ A collection of various utilities packaged as an RPM
 %install
 mkdir -p %{buildroot}/usr/lib/alexchesters-utils
 cp -R ./src/. %{buildroot}/usr/lib/alexchesters-utils
+ln -s /usr/lib/alexchesters-utils/* /usr/bin
 mkdir -p %{buildroot}/var/log/alexchesters-utils
 
 %clean
 rm -rf %{buildroot}
 
 %files
-%defattr(644, root, root, 755)
+%defattr(755, root, root, 755)
 /usr/lib/alexchesters-utils
 /var/log/alexchesters-utils
