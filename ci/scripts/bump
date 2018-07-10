@@ -18,6 +18,9 @@ IDENTIFIER=$(curl \
   jq -r .id)
 
 echo "Release created $IDENTIFIER"
+echo "`pwd`"
+echo "Going to upload RPMS/x86_64/alexchesters-utils-0.0.0-1.x86_64.rpm"
+echo "`stat RPMS/x86_64/alexchesters-utils-0.0.0-1.x86_64.rpm`"
 
 # TODO: Use URI templates and use proper upload_url
 
