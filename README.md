@@ -1,5 +1,10 @@
 # utils
-A collection of various utilities packaged as an RPM
+A collection of various EC2 utilities packaged as an RPM
+
+## Requirements
+This package is only designed to work with
+[Amazon Linux 2](https://aws.amazon.com/amazon-linux-2/) and thus may not work
+on other operating systems.
 
 ## Usage
 1. Grab the [latest RPM](https://github.com/AlexChesters/utils/releases/latest)
