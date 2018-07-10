@@ -38,7 +38,7 @@
               "Statement": [
                 {
                   "Action": [
-                    "ssm:GetParameter"
+                    "ssm:GetParameters"
                   ],
                   "Resource": [
                     "arn:aws:ssm:eu-west-1:008356366354:parameter/CodeBuild/GitHub-Token"
