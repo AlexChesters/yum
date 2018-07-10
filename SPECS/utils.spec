@@ -12,8 +12,6 @@ Group: Installation Script
 License: MIT
 Source: %{name}.tar.gz
 BuildRoot: %{buildroot}
-Requires: nodejs
-BuildRequires: nodejs
 AutoReqProv: no
 
 %description
