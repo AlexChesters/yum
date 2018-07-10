@@ -15,7 +15,7 @@ UPLOAD_URL=$(curl \
   "draft": false,
   "prerelease": false}
 ' https://api.github.com/repos/AlexChesters/utils/releases?access_token=$GITHUB_TOKEN \
-  jq -r .upload_url)
+  jq -r .assets_url) # TODO: Use URI templates and use proper upload_url
 
 # upload the RPM to the release
 curl \
