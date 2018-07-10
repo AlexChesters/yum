@@ -21,4 +21,4 @@ curl \
   -X POST \
   -H 'Content-Type: application/x-rpm' \
   --data @RPMS/x86_64/alexchesters-utils-0.0.0-1.x86_64.rpm \
-  https://api.github.com/repos/AlexChesters/utils/releases/1/assets?access_token=$GITHUB_TOKEN&name=alexchesters-utils.rpm
+  https://api.github.com/repos/AlexChesters/utils/releases/11852688/assets?access_token=$GITHUB_TOKEN&name=alexchesters-utils.rpm
