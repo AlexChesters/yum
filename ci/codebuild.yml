@@ -1,0 +1,44 @@
+Description: Pipeline for utils
+Resources:
+  CodeBuildRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service:
+                - codebuild.amazonaws.com
+      ManagedPolicyArns:
+        - !ImportValue core-infrastructure-global-codebuild-base-policy-arn
+  CodeBuildProject:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Artifacts:
+        Type: S3
+        Location: !ImportValue core-infrastructure-eu-west-1-build-artifacts-bucket
+        Path: /artifacts/utils/
+        Packaging: ZIP
+        Name: build
+        NamespaceType: BUILD_ID
+      Environment:
+        ComputeType: BUILD_GENERAL1_SMALL
+        Image: aws/codebuild/standard:4.0
+        PrivilegedMode: false
+        Type: LINUX_CONTAINER
+      ServiceRole: !Ref CodeBuildRole
+      Source:
+        Type: GITHUB
+        Location: https://github.com/alexchesters/utils.git
+        GitCloneDepth: 1
+        Auth:
+          Type: OAUTH
+        BuildSpec: buildspec.yml
+      Name: utils
+      BuildBatchConfig:
+        CombineArtifacts: false
+        TimeoutInMins: 30
+        ServiceRole: !Ref CodeBuildRole
+      TimeoutInMinutes: 20

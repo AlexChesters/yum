@@ -5,14 +5,9 @@ env:
     "GITHUB_TOKEN": "/CodeBuild/GitHub-Token"
 
 phases:
-  install:
-    commands:
-      - npm install
   build:
     commands:
+      - npm ci
       - tar -zcf SOURCES/alexchesters-utils.tar.gz src
       - rpmbuild --define "_topdir `pwd`" --define "debug_package %{nil}" -ba SPECS/utils.spec
-      - aws s3 cp RPMS/x86_64 s3://$BUILDS_BUCKET/ --recursive
-  post_build:
-    commands:
       - node ./ci/scripts/bump.js $GITHUB_TOKEN
