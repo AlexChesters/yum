@@ -42,3 +42,10 @@ Resources:
         TimeoutInMins: 30
         ServiceRole: !Ref CodeBuildRole
       TimeoutInMinutes: 20
+      Triggers:
+        Webhook: true
+        FilterGroups:
+          - - Type: EVENT
+              Pattern: PUSH
+            - Type: HEAD_REF
+              Pattern: "^refs/heads/master$"
