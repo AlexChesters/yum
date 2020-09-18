@@ -7,6 +7,7 @@ env:
 phases:
   build:
     commands:
+      - yum install -y rpm-build
       - npm ci
       - tar -zcf SOURCES/alexchesters-utils.tar.gz src
       - rpmbuild --define "_topdir `pwd`" --define "debug_package %{nil}" -ba SPECS/utils.spec
