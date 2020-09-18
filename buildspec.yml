@@ -2,12 +2,11 @@ version: 0.2
 
 env:
   parameter-store:
-    "GITHUB_TOKEN": "/CodeBuild/GitHub-Token"
+    "GITHUB_TOKEN": "/Secrets/GitHub-Token"
 
 phases:
   build:
     commands:
-      - yum install -y rpm-build
       - npm ci
       - tar -zcf SOURCES/alexchesters-utils.tar.gz src
       - rpmbuild --define "_topdir `pwd`" --define "debug_package %{nil}" -ba SPECS/utils.spec
