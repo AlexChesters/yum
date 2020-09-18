@@ -46,6 +46,8 @@ function upsert_record_set {
     --hosted-zone-id $HOSTED_ZONE_ID \
     --change-batch file://batch.json
 
+  rm batch.json
+
   popd
 
   log "successfully updated record set, $DNS_NAME is now pointing at $IP_ADDRESS"
