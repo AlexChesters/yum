@@ -3,22 +3,18 @@
   "version": "0.0.0",
   "description": "A collection of various utilities packaged as an RPM",
   "main": "index.js",
-  "scripts": {
-    "create-stack": "stack-manager create",
-    "update-stack": "stack-manager update"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlexChesters/yum.git"
+    "url": "git+https://github.com/AlexChesters/utils.git"
   },
   "author": "Alex Chesters",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AlexChesters/yum/issues"
+    "url": "https://github.com/AlexChesters/utils/issues"
   },
-  "homepage": "https://github.com/AlexChesters/yum#readme",
+  "homepage": "https://github.com/AlexChesters/utils#readme",
   "devDependencies": {
-    "@octokit/rest": "^15.9.4",
-    "stack-manager": "^0.4.2"
+    "@octokit/rest": "^15.9.4"
   }
 }
