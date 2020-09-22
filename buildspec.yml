@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   parameter-store:
-    "GITHUB_TOKEN": "/Secrets/GitHub-Token"
+    "GITHUB_TOKEN": "/Secrets/GitHub-Personal-Access-Token"
 
 phases:
   build:
